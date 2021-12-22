@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { GetStaticProps } from "next";
 import matter from "gray-matter";
 import { Box } from "@chakra-ui/react";
 import { Post } from "types/post";
@@ -36,7 +37,13 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params: { slug } }) => {
+type StaticProps = {
+  params: {
+    slug: string;
+  };
+};
+
+export const getStaticProps = async ({ params: { slug } }: StaticProps) => {
   const markdownWithMeta = fs.readFileSync(
     path.join("posts", slug + ".mdx"),
     "utf-8"

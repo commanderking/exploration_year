@@ -12,8 +12,8 @@ const Posts = ({ posts }: Props) => {
       <Heading>Latest struggles</Heading>
       {posts.map((post) => {
         return (
-          <Box>
-            <PostPreview key={post.frontMatter.title} post={post} />
+          <Box key={post.frontMatter.title}>
+            <PostPreview post={post} />
           </Box>
         );
       })}

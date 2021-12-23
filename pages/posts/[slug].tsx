@@ -2,11 +2,11 @@ import fs from "fs";
 import path from "path";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { GetStaticProps } from "next";
 import matter from "gray-matter";
-import { Box } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { Post } from "types/post";
 import components from "constants/MdxComponents";
+import Head from "next/head";
 
 type Props = {
   frontMatter: Post["frontMatter"];
@@ -14,12 +14,20 @@ type Props = {
 };
 
 const PostPage = ({
-  frontMatter: { title, publishedOn },
+  frontMatter: { title, publishedOn, description },
   mdxSource,
 }: Props) => {
   return (
-    <Box>
-      <MDXRemote {...mdxSource} components={components} />
+    <Box className="mdxWrapper">
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Box maxWidth={600} margin="auto" p={4}>
+        <Heading mb={4}>{title}</Heading>
+        <MDXRemote {...mdxSource} components={components} />
+      </Box>
     </Box>
   );
 };

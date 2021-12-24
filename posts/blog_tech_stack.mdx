@@ -15,4 +15,42 @@ What I've tried before:
 
 1. [Gatsby Starter Blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog)
 
-The Gatsby starter blog is much quicker to get off the ground, but in recent years, I've enjoyed the developer experience of next.js, so made the switch. As I'm hoping to create some more complex components and data visualizations, I chose the framework that I have enjoyed using the most.
+The Gatsby starter blog is much quicker to get off the ground, but in recent years, I've enjoyed the developer experience of next.js, so made the switch. As I'm hoping to create some more complex components, data visualizations, and perhaps hook into some databases, next.js seemed like a good fit. This could be a case of being too ambitious with my goals and choosing a more flexible framework. Whereas I could have hit the ground running with Gatsby's starter blog, I'd much rather work with the next.js framework should I want to do anything other than write blog posts.
+
+### Chakra-UI and MDX
+
+I've always enjoyed using chakra-ui as a styling and simple component library for my projects. One challenge I quickly realized, however, is that Chakra's desire to reset all css also removes all the default styling of html elements. As a result, my mdx files, leveraging `mdx-next-remove` have all their styling removed since they do not leverage chakra-ui components. As an example, lists will not have the numbers or bullets display and links do not have any default underlining on hover.
+
+My current solution, which is likely unperformant and not ideal for scaling, is to map each html element I use to a chakra component. I.e.
+
+```
+const components = {
+  ol: (props: MarkdownProps) => <OrderedList {...props} ml={8} mb={4} mt={4} />,
+  ul: UnorderedList,
+  li: ListItem,
+  a: (props: MarkdownProps) => {
+    return (
+      <Link href={props.href} color="brand.primary">
+        <strong>{props.children}</strong>
+      </Link>
+    );
+  },
+  p: (props: MarkdownProps) => (
+    <Text mt={4} mb={4}>
+      {props.children}
+    </Text>
+  ),
+  code: (props: MarkdownProps) => (
+    <Code padding={4} width="100%" overflow="scroll">
+      {props.children}
+    </Code>
+  ),
+  ...
+};
+```
+
+And then in the component, which renders the mdx:
+
+```
+    <MDXRemote {...mdxSource} components={components} />
+```

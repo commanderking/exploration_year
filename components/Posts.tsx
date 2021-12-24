@@ -9,7 +9,9 @@ type Props = {
 const Posts = ({ posts }: Props) => {
   return (
     <Box>
-      <Heading>Latest struggles</Heading>
+      <Heading size="lg" mb={4}>
+        Latest posts
+      </Heading>
       {posts.map((post) => {
         return (
           <Box key={post.frontMatter.title}>

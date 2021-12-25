@@ -5,6 +5,7 @@ import matter from "gray-matter";
 import { Post } from "types/post";
 import Posts from "components/Posts";
 import { Box } from "@chakra-ui/react";
+import Navbar from "components/Navbar";
 
 type Props = {
   posts: Post[];
@@ -21,7 +22,7 @@ const Home = ({ posts }: Props) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Navbar />
       <Box maxWidth="600px" margin="auto">
         <Posts posts={posts} />
       </Box>

@@ -9,7 +9,7 @@ export const PostPreview = ({ post }: Props) => {
   const { frontMatter } = post;
 
   return (
-    <Box p={4} role="group" bg="brand.100">
+    <Box m={4} mb={8} role="group" bg="brand.100">
       <Link href={`/posts/${post.slug}`} _hover={{ textDecoration: "none" }}>
         <Heading _groupHover={{ color: "brand.primary" }} mb={4} size="md">
           {frontMatter.title}

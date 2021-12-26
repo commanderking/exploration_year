@@ -4,7 +4,6 @@ import path from "path";
 import matter from "gray-matter";
 import { Post } from "types/post";
 import Posts from "components/Posts";
-import { Box } from "@chakra-ui/react";
 
 type Props = {
   posts: Post[];
@@ -21,10 +20,7 @@ const Home = ({ posts }: Props) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Box maxWidth="600px" margin="auto">
-        <Posts posts={posts} />
-      </Box>
+      <Posts posts={posts} />
     </div>
   );
 };

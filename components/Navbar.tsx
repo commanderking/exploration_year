@@ -30,7 +30,7 @@ export default function WithSubnavigation() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box maxWidth="600px" margin="auto" mb={8}>
+    <Box mb={8}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -59,7 +59,6 @@ export default function WithSubnavigation() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
             <em>Jeffrey King</em>
@@ -91,7 +90,7 @@ export default function WithSubnavigation() {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkHoverColor = "brand.primary";
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -103,7 +102,6 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -157,7 +155,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          <Text>{subLabel}</Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -252,10 +250,10 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Latest Posts",
-    href: "#",
+    href: "/",
   },
   {
     label: "About",
-    href: "#",
+    href: "/about",
   },
 ];

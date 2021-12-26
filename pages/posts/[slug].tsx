@@ -24,7 +24,7 @@ const PostPage = ({
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box maxWidth={600} margin="auto" p={4}>
+      <Box p={4}>
         <Heading mb={4}>{title}</Heading>
         <MDXRemote {...mdxSource} components={components} />
       </Box>

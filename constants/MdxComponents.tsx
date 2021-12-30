@@ -8,8 +8,12 @@ import {
   Heading,
 } from "@chakra-ui/react";
 
-const getHeadingCreator = (size: any) => (props: any) => {
-  return <Heading size={size}>{props.children}</Heading>;
+const getHeadingCreator = (size: any, mt: any) => (props: any) => {
+  return (
+    <Heading mt={mt} size={size}>
+      {props.children}
+    </Heading>
+  );
 };
 
 type MarkdownProps = {
@@ -38,11 +42,11 @@ const components = {
       {props.children}
     </Code>
   ),
-  h1: getHeadingCreator("xl"),
-  h2: getHeadingCreator("lg"),
-  h3: getHeadingCreator("md"),
-  h4: getHeadingCreator("sm"),
-  h5: getHeadingCreator("xs"),
+  h1: getHeadingCreator("xl", 16),
+  h2: getHeadingCreator("lg", 12),
+  h3: getHeadingCreator("md", 12),
+  h4: getHeadingCreator("sm", 8),
+  h5: getHeadingCreator("xs", 4),
 };
 
 export default components;

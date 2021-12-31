@@ -7,7 +7,6 @@ type Props = {
 };
 
 const WeeklyMedia = ({ weeklyMedia }: Props) => {
-  console.log("weeklyMedia", weeklyMedia);
   return (
     <Box>
       {weeklyMedia.map((weeklyMedia) => {

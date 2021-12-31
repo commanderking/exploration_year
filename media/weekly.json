@@ -1,0 +1,28 @@
+[
+  {
+    "week": "12/27/21",
+    "media": [
+      {
+        "type": "BOOK",
+        "title": "The Death and Life of Great American Cities",
+        "url": "https://www.goodreads.com/book/show/30833.The_Death_and_Life_of_Great_American_Cities"
+      },
+      {
+        "type": "ARTICLE",
+        "url": "https://www.nytimes.com/2021/11/27/us/minneapolis-school-integration.html"
+      },
+      {
+        "type": "ARTICLE",
+        "url": "https://tcf.org/content/report/walls-exclusion-massachusetts-three-mothers-overcome-discriminatory-zoning-laws-improve-lives-children"
+      },
+      {
+        "type": "ARTICLE",
+        "url": "https://www.npr.org/2021/12/21/1063004934/extra-learning-time-is-helping-these-students-catch-up-from-covid-interruptions"
+      },
+      {
+        "type": "ARTICLE",
+        "url": "https://tcf.org/content/commentary/forgotten-asians-school-admissions-reform-debate/"
+      }
+    ]
+  }
+]

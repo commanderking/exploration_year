@@ -7,7 +7,7 @@ import {
   Code,
   Heading,
 } from "@chakra-ui/react";
-
+import PrimaryLink from "components/PrimaryLink";
 const getHeadingCreator = (size: any, mt: any) => (props: any) => {
   return (
     <Heading mt={mt} size={size}>
@@ -26,11 +26,7 @@ const components = {
   ul: UnorderedList,
   li: ListItem,
   a: (props: MarkdownProps) => {
-    return (
-      <Link href={props.href} color="brand.primary">
-        <strong>{props.children}</strong>
-      </Link>
-    );
+    return <PrimaryLink href={props.href}>{props.children}</PrimaryLink>;
   },
   p: (props: MarkdownProps) => (
     <Text mt={4} mb={4}>

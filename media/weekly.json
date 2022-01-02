@@ -1,5 +1,9 @@
 [
   {
+    "week": "1/3/22",
+    "media": []
+  },
+  {
     "week": "12/27/21",
     "media": [
       {
@@ -22,6 +26,10 @@
       {
         "type": "ARTICLE",
         "url": "https://tcf.org/content/commentary/forgotten-asians-school-admissions-reform-debate/"
+      },
+      {
+        "type": "ARTICLE",
+        "url": "https://fordhaminstitute.org/national/commentary/educations-enduring-love-affair-luxury-beliefs"
       }
     ]
   }

@@ -1,4 +1,4 @@
-import { OpenGraphProperties } from "open-graph-scraper";
+import { OpenGraphProperties, OpenGraphImage } from "open-graph-scraper";
 
 type Book = {
   type: "BOOK";
@@ -19,8 +19,12 @@ export type WeeklyMedia = {
   media: Media[];
 };
 
+type SuccessfulOpenGraphProperties = OpenGraphProperties & {
+  ogImage: OpenGraphImage;
+};
+
 export type WeeklyMediaOpenGraph = {
   week: string;
   // See: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/open-graph-scraper/index.d.ts
-  media: OpenGraphProperties[];
+  media: SuccessfulOpenGraphProperties[];
 };

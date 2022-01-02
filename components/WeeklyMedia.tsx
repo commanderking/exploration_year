@@ -33,7 +33,10 @@ const WeeklyMedia = ({ weeklyMedia }: Props) => {
                         p={4}
                         border="1px solid lightgray"
                       >
-                        <Image src={medium.ogImage.url} />
+                        <Image
+                          src={medium.ogImage.url}
+                          alt={`Image from: ${medium.ogImage.url}`}
+                        />
                         <Text>{medium.ogSiteName}</Text>
                         <Box mt={4}>
                           <PrimaryLink isExternal href={medium.ogUrl}>

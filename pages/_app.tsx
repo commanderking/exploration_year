@@ -7,7 +7,7 @@ import { Box } from "@chakra-ui/react";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Box maxWidth="600px" margin="auto">
+      <Box maxWidth="700px" p={4} margin="auto">
         <Navbar />
         <Component {...pageProps} />
       </Box>

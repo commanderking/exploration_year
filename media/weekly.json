@@ -3,8 +3,17 @@
     "week": "1/3/22",
     "media": [
       {
+        "type": "BOOK",
+        "url": "https://www.goodreads.com/book/show/32191706-the-color-of-law"
+      },
+
+      {
         "type": "ARTICLE",
         "url": "https://fordhaminstitute.org/national/commentary/attacking-gifted-education-bad-policy-and-bad-politics"
+      },
+      {
+        "type": "ARTICLE",
+        "url": "https://www.vox.com/the-goods/22868641/chicago-school-closings-omicron-covid-remote-learning"
       }
     ]
   },
